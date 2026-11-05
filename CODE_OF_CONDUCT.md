@@ -27,3 +27,4 @@ This Code of Conduct applies within all community spaces, repositories, discussi
 ## Contact
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leadership at **conduct@setsig.com**.
+

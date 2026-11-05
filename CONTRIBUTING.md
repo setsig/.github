@@ -30,3 +30,4 @@ Thank you for your interest in contributing to the **setsig.com** physical prese
    - TypeScript: `npx tsc --noEmit && npm run lint`
    - Python: `python3 -m unittest discover tests`
 4. Submit a Pull Request with a clear description and testing evidence.
+

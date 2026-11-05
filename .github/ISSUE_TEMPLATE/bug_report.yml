@@ -49,3 +49,4 @@ body:
       description: What did you expect to happen?
     validations:
       required: true
+

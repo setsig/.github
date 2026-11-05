@@ -29,3 +29,4 @@ Include:
 - **Initial Severity Triage:** Within 48 hours.
 - **Remediation & Patch Deployment:** Critical vulnerabilities are addressed within 72 hours under an expedited hotfix protocol.
 - **Credit:** We credit security researchers in our release notes unless anonymity is preferred.
+
