@@ -16,8 +16,8 @@ Thank you for your interest in contributing to the **setsig.com** physical prese
    - TypeScript: `noUnusedLocals: true` and `noUnusedParameters: true` are strictly enforced.
 2. **Strict Cryptography & Timing Attacks:**
    - All signature and token comparisons must utilize `crypto/subtle.ConstantTimeCompare` (Go) or equivalent constant-time primitives. Never use standard `==` for hash verification.
-3. **Patent & IP Shield:**
-   - Core presence algorithms are proprietary intellectual property governed by AVCI Ventures and Founder individual patent shields. Contributions must not introduce unlicensed third-party patented concepts or violate the non-repudiable presence pipeline.
+3. **Architecture & Integrity Boundaries:**
+   - Contributions must preserve the sector-agnostic, non-repudiable presence verification pipeline and must not introduce unlicensed third-party code or weaken cryptographic guarantees.
 4. **Sub-15ms Latency Commitment:**
    - The `/v1/sessions/verify` endpoint has a strict p99 < 15ms target. Keep middleware lean and avoid remote network blocking during session verification.
 

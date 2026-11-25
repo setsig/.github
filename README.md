@@ -6,7 +6,7 @@
 [![Engine Status](https://img.shields.io/badge/Core%20Engine-Go%201.23%2B-00ADD8?style=flat-square&logo=go)](https://api.setsig.com/v1/health)
 [![Verification Latency](https://img.shields.io/badge/p99%20Latency-%3C%2015ms-10B981?style=flat-square)](https://setsig.com)
 [![Hardware Attestation](https://img.shields.io/badge/Attestation-App%20Attest%20%2F%20Play%20Integrity-6366F1?style=flat-square)](https://setsig.com/technology)
-[![Visual Proof](https://img.shields.io/badge/Visual%20Proof-T%C3%9CRKPATENT%20Claim%2010-F59E0B?style=flat-square)](https://setsig.com/technology)
+[![Visual Proof](https://img.shields.io/badge/Visual%20Proof-Cryptographic%20Evidence%20Chain-F59E0B?style=flat-square)](https://setsig.com/technology)
 [![Double-Entry Ledger](https://img.shields.io/badge/Billing-Double--Entry%20Ledger-3B82F6?style=flat-square)](https://console.setsig.com)
 [![License](https://img.shields.io/badge/License-Apache%202.0%20%2F%20Proprietary%20Core-zinc?style=flat-square)](./LICENSE)
 
@@ -28,7 +28,7 @@ In an era of simulated software, mock locations, remote screen shares, and synth
 **setsig** answers a single question with non-repudiable mathematical proof:  
 > *"Was this specific user physically present at this exact venue at this exact second?"*
 
-By unifying **Dynamic TOTP (RFC 6238)**, **Spherical Haversine Geofencing**, **Hardware-Backed Device Attestation (Apple Secure Enclave & Google Play Integrity)**, and **TÜRKPATENT Claim 10 Visual Proof**, setsig provides an enterprise-grade verification orchestrator that responds in **sub-15 milliseconds (p99)**.
+By unifying **Dynamic TOTP (RFC 6238)**, **Spherical Haversine Geofencing**, **Hardware-Backed Device Attestation (Apple Secure Enclave & Google Play Integrity)**, and **Cryptographic Visual Evidence Chain**, setsig provides an enterprise-grade verification orchestrator that responds in **sub-15 milliseconds (p99)**.
 
 ---
 
@@ -61,7 +61,7 @@ By unifying **Dynamic TOTP (RFC 6238)**, **Spherical Haversine Geofencing**, **H
 1. **Ephemeral Dynamic TOTP (30-60s):** Dynamic QR tokens auto-refresh using venue seeds. Screenshots, photos, and forward relays become useless within seconds.
 2. **Haversine Geofencing:** Mathematical distance checks against venue radius (`10m <= radius <= 250m`) computed in nanoseconds without third-party GPS lookup bottlenecks.
 3. **Hardware-Backed Telemetry (Zero-Trust):** Integration with Apple App Attest and Google Play Integrity API to cryptographically certify that client requests originate from genuine unrooted physical devices.
-4. **TÜRKPATENT Claim 10 Visual Proof:** Two-stage intent handshake with direct cloud storage upload and cryptographic SHA-256 HMAC binding, preventing virtual camera injection.
+4. **Cryptographic Visual Evidence Chain:** Two-stage intent handshake with a 10-second live capture window, direct cloud storage upload, and SHA-256 HMAC session sealing, preventing virtual camera injection.
 5. **Two-Layer Replay Protection:**
    - Layer 1: Sub-millisecond Redis distributed atomic lock (`SETNX setsig:lock:token:{id} 1 EX 120`).
    - Layer 2: PostgreSQL TimescaleDB append-only ledger constraint (`CONSTRAINT uq_session_tenant_client_token UNIQUE (tenant_id, client_token)`).
@@ -74,13 +74,13 @@ All official client libraries and SDKs are strictly versioned, type-safe, and co
 
 | Ecosystem | Package / Library | Description | Repository |
 | :--- | :--- | :--- | :--- |
-| **React / Next.js** | [`@setsig/react`](https://www.npmjs.com/package/@setsig/react) | React 18 & 19 hooks and RSC-safe components with zero hydration mismatch | [`setsig-skds-react`](https://github.com/setsig/setsig-skds-react) |
-| **iOS / Swift** | [`SetsigSDK`](https://github.com/setsig/setsig-skds-ios) | Swift Package Manager (iOS 15+) with Apple App Attest & SwiftUI Kiosk | [`setsig-skds-ios`](https://github.com/setsig/setsig-skds-ios) |
-| **Android / Kotlin** | [`setsig-android`](https://github.com/setsig/setsig-skds-android) | Kotlin coroutines client, Google Play Integrity helper & Jetpack Compose Kiosk | [`setsig-skds-android`](https://github.com/setsig/setsig-skds-android) |
-| **Go** | [`setsig-go`](https://pkg.go.dev/github.com/setsig/setsig-go) | Idiomatic Go 1.23+ client with built-in retries and HMAC verification | [`setsig-skds-go`](https://github.com/setsig/setsig-skds-go) |
-| **Node.js** | [`@setsig/node`](https://www.npmjs.com/package/@setsig/node) | Type-safe TypeScript / Node.js ESM client with webhook verification | [`setsig-skds-node`](https://github.com/setsig/setsig-skds-node) |
-| **Python** | [`setsig`](https://pypi.org/project/setsig/) | Python 3.10+ client with dataclasses and cryptographic helpers | [`setsig-skds-python`](https://github.com/setsig/setsig-skds-python) |
-| **Browser / Web** | [`@setsig/browser`](https://www.npmjs.com/package/@setsig/browser) | Web client with geolocation watch & Web Crypto SHA-256 | [`setsig-skds-browser`](https://github.com/setsig/setsig-skds-browser) |
+| **React / Next.js** | [`@setsig/react`](https://www.npmjs.com/package/@setsig/react) | React 18 & 19 hooks and RSC-safe components with zero hydration mismatch | [`setsig-sdks/react`](https://github.com/setsig/setsig-sdks/tree/main/react) |
+| **iOS / Swift** | [`SetsigSDK`](https://github.com/setsig/setsig-sdks/tree/main/ios) | Swift Package Manager (iOS 15+) with Apple App Attest & SwiftUI Kiosk | [`setsig-sdks/ios`](https://github.com/setsig/setsig-sdks/tree/main/ios) |
+| **Android / Kotlin** | [`setsig-android`](https://github.com/setsig/setsig-sdks/tree/main/android) | Kotlin coroutines client, Google Play Integrity helper & Jetpack Compose Kiosk | [`setsig-sdks/android`](https://github.com/setsig/setsig-sdks/tree/main/android) |
+| **Go** | [`setsig-go`](https://pkg.go.dev/github.com/setsig/setsig-go) | Idiomatic Go 1.23+ client with built-in retries and HMAC verification | [`setsig-sdks/go`](https://github.com/setsig/setsig-sdks/tree/main/go) |
+| **Node.js** | [`@setsig/node`](https://www.npmjs.com/package/@setsig/node) | Type-safe TypeScript / Node.js ESM client with webhook verification | [`setsig-sdks/node`](https://github.com/setsig/setsig-sdks/tree/main/node) |
+| **Python** | [`setsig`](https://pypi.org/project/setsig/) | Python 3.10+ client with dataclasses and cryptographic helpers | [`setsig-sdks/python`](https://github.com/setsig/setsig-sdks/tree/main/python) |
+| **Browser / Web** | [`@setsig/browser`](https://www.npmjs.com/package/@setsig/browser) | Web client with geolocation watch & Web Crypto SHA-256 | [`setsig-sdks/browser`](https://github.com/setsig/setsig-sdks/tree/main/browser) |
 | **Edge CDN** | `setsig-kiosk.js` | Zero-dependency standalone script embed for kiosk tablets | `https://cdn.setsig.com/kiosk/setsig-kiosk.js` |
 
 ---
@@ -98,7 +98,7 @@ export function GateTerminal({ venueId }: { venueId: string }) {
   return (
     <SetsigQRCode
       venueId={venueId}
-      apiKey="sk_live_..."
+      apiKey="pk_live_..."
       refreshInterval={60}
       size={260}
       onRefresh={(token) => console.log("New dynamic token:", token.tokenId)}
@@ -142,7 +142,7 @@ func main() {
 ```swift
 import SetsigSDK
 
-let client = SetsigClient(apiKey: "sk_live_...")
+let client = SetsigClient(apiKey: "pk_live_...")
 
 // Generate hardware attestation token from Apple Secure Enclave
 let attestationToken = try await AppAttestService.shared.generateAttestation(
@@ -170,8 +170,8 @@ print("Verified: \(result.status), Distance: \(result.distanceMeters)m")
 | Repository | Responsibility | Stack |
 | :--- | :--- | :--- |
 | **[`setsig-backend`](https://github.com/setsig/setsig-backend)** | Core Verification Engine, REST API, Webhooks & Ledger | Go 1.23+, Chi, Redis 7.4 Cluster, PostgreSQL 16 (TimescaleDB) |
-| **[`setsig-console`](https://github.com/setsig/setsig-console)** | B2B Partner Portal, Venue Management, Analytics & RBAC | Next.js 16, React 19, Tailwind CSS v4, shadcn/ui, TanStack Query v5 |
-| **[`setsig-marketing`](https://github.com/setsig/setsig-marketing)** | Public Showcase, Playground, Global Documentation & MDX | Next.js 16, `next-intl` (en, tr, de, ar), Cinematic Dark UI |
+| **[`setsig-console`](https://github.com/setsig/setsig-console)** | B2B Partner Portal, Venue Management, Analytics & RBAC | Next.js 16, React 19, Tailwind CSS v4, CVA, TanStack Query v5 |
+| **[`setsig-marketing`](https://github.com/setsig/setsig-marketing)** | Public Showcase, Playground, Global Documentation & Blog | Next.js 16, `next-intl` (en, tr, de, ar), True-Black UI |
 
 ---
 
@@ -185,10 +185,10 @@ Please do not open public issues for sensitive security vulnerabilities. We offe
 
 ---
 
-## 📜 Intellectual Property & Governance Shield
+## 📜 Governance & Enterprise Licensing
 
-- All core algorithms, mathematical geofencing models, and optical verification processes are protected under patent applications filed with **TÜRKPATENT** and **WIPO PCT** by the **Founder Individual IP Shield**.
-- Platform operations are licensed and governed under **AVCI Ventures**.
+- Core verification algorithms, mathematical geofencing models, and cryptographic visual evidence pipelines are proprietary technologies operated by **setsig.com**.
+- Platform operations are governed under **AVCI Ventures**.
 - For licensing, enterprise on-premise deployments, or custom defense/aviation integration, contact [enterprise@setsig.com](mailto:enterprise@setsig.com).
 
 ---
