@@ -46,13 +46,13 @@ All official client libraries are strictly versioned, type-safe, and ready for p
 
 | Ecosystem | Package / Library | Description | Repository |
 | :--- | :--- | :--- | :--- |
-| **React / Next.js** | [`@setsig/react`](https://www.npmjs.com/package/@setsig/react) | React 18 & 19 hooks and RSC-safe components | [`setsig-sdks/react`](https://github.com/setsig/setsig-sdks/tree/main/react) |
-| **iOS / Swift** | [`SetsigSDK`](https://github.com/setsig/setsig-sdks/tree/main/ios) | Swift Package Manager (iOS 15+) with Apple App Attest & SwiftUI Kiosk | [`setsig-sdks/ios`](https://github.com/setsig/setsig-sdks/tree/main/ios) |
-| **Android / Kotlin** | [`setsig-android`](https://github.com/setsig/setsig-sdks/tree/main/android) | Kotlin coroutines client, Google Play Integrity helper & Compose Kiosk | [`setsig-sdks/android`](https://github.com/setsig/setsig-sdks/tree/main/android) |
-| **Go** | [`setsig-go`](https://pkg.go.dev/github.com/setsig/setsig-go) | Idiomatic Go client with retries and constant-time HMAC verification | [`setsig-sdks/go`](https://github.com/setsig/setsig-sdks/tree/main/go) |
-| **Node.js** | [`@setsig/node`](https://www.npmjs.com/package/@setsig/node) | Type-safe TypeScript / Node.js ESM client with webhook verification | [`setsig-sdks/node`](https://github.com/setsig/setsig-sdks/tree/main/node) |
-| **Python** | [`setsig`](https://pypi.org/project/setsig/) | Python 3.10+ zero-dependency client with cryptographic helpers | [`setsig-sdks/python`](https://github.com/setsig/setsig-sdks/tree/main/python) |
-| **Browser / Web** | [`@setsig/browser`](https://www.npmjs.com/package/@setsig/browser) | Web client with geolocation & Web Crypto SHA-256 | [`setsig-sdks/browser`](https://github.com/setsig/setsig-sdks/tree/main/browser) |
+| **React / Next.js** | [`@setsig/react`](https://www.npmjs.com/package/@setsig/react) | React 18 & 19 hooks and RSC-safe components | [`setsig-skds-react`](https://github.com/setsig/setsig-skds-react) |
+| **iOS / Swift** | [`SetsigSDK`](https://github.com/setsig/setsig-skds-ios) | Swift Package Manager (iOS 15+) with Apple App Attest & SwiftUI Kiosk | [`setsig-skds-ios`](https://github.com/setsig/setsig-skds-ios) |
+| **Android / Kotlin** | [`setsig-android`](https://github.com/setsig/setsig-skds-android) | Kotlin coroutines client, Google Play Integrity helper & Compose Kiosk | [`setsig-skds-android`](https://github.com/setsig/setsig-skds-android) |
+| **Go** | [`setsig-go`](https://pkg.go.dev/github.com/setsig/setsig-go) | Idiomatic Go client with retries and constant-time HMAC verification | [`setsig-skds-go`](https://github.com/setsig/setsig-skds-go) |
+| **Node.js** | [`@setsig/node`](https://www.npmjs.com/package/@setsig/node) | Type-safe TypeScript / Node.js ESM client with webhook verification | [`setsig-skds-node`](https://github.com/setsig/setsig-skds-node) |
+| **Python** | [`setsig`](https://pypi.org/project/setsig/) | Python 3.10+ zero-dependency client with cryptographic helpers | [`setsig-skds-python`](https://github.com/setsig/setsig-skds-python) |
+| **Browser / Web** | [`@setsig/browser`](https://www.npmjs.com/package/@setsig/browser) | Web client with geolocation & Web Crypto SHA-256 | [`setsig-skds-browser`](https://github.com/setsig/setsig-skds-browser) |
 
 ---
 
@@ -60,12 +60,12 @@ All official client libraries are strictly versioned, type-safe, and ready for p
 
 Launch physical check-in verification for workshops, events, and venues in minutes without custom backend code:
 
-| Platform | Integration | Setup | Repository |
+| Platform | Integration | Setup | Access |
 | :--- | :--- | :--- | :--- |
 | **WooCommerce** | WordPress HPOS Plugin, Admin Metabox & Shortcodes | ~3 min | [`setsig-woocommerce`](https://github.com/setsig/setsig-woocommerce) |
 | **Shopify** | Order Status & POS UI Extensions, GraphQL Sync & GDPR | ~2 min | [`setsig-shopify`](https://github.com/setsig/setsig-shopify) |
 | **ikas** | OAuth App, Branch-to-Venue Sync & Embedded Kiosk | ~2 min | [`setsig-ikas`](https://github.com/setsig/setsig-ikas) |
-| **Shopier** | Webhook Connector, Rule Engine & Evidence Pack | ~5 min | [`setsig-shopier`](https://github.com/setsig/setsig-shopier) |
+| **Shopier** | Managed Webhook Connector & Evidence Pack | ~5 min | [Console Integrations](https://console.setsig.com/integrations) |
 
 ---
 
